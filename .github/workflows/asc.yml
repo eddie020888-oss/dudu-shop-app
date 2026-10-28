@@ -28,7 +28,7 @@ jobs:
             submit)     python3 scripts/asc/metadata.py apply && python3 scripts/asc/submit.py ;;
             iap)        python3 scripts/asc/iap.py ;;
             gamecenter) python3 scripts/asc/gamecenter.py ;;
-            certs)      app-store-connect certificates list --type DISTRIBUTION --type IOS_DISTRIBUTION --json | python3 -c "import json,sys; [print(c['id'], c['attributes']['certificateType'], c['attributes']['name'], c['attributes']['displayName'], c['attributes']['expirationDate']) for c in json.load(sys.stdin)]" ;;
+            certs)      for t in DISTRIBUTION IOS_DISTRIBUTION; do app-store-connect certificates list --type $t --json | python3 -c "import json,sys; [print(c['id'], c['attributes']['certificateType'], c['attributes']['displayName'], c['attributes']['expirationDate']) for c in json.load(sys.stdin)]"; done ;;
             caps)       python3 scripts/enable_capabilities.py com.eddiejiang.islandme HEALTHKIT GAME_CENTER ICLOUD ;;
             *) echo "unknown task"; exit 1 ;;
           esac
