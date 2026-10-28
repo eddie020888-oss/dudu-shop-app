@@ -1,0 +1,15 @@
+{
+  "images": [
+    {
+      "filename": "acc_glasses_star.png",
+      "idiom": "universal"
+    }
+  ],
+  "info": {
+    "author": "xcode",
+    "version": 1
+  },
+  "properties": {
+    "template-rendering-intent": "original"
+  }
+}

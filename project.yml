@@ -1,0 +1,55 @@
+name: IslandMe
+options:
+  bundleIdPrefix: com.eddiejiang
+  deploymentTarget:
+    iOS: "18.0"
+  xcodeVersion: "16.0"
+  createIntermediateGroups: true
+  developmentLanguage: zh-Hans
+settings:
+  base:
+    SWIFT_VERSION: "5.10"
+    MARKETING_VERSION: "1.0.1"
+    CURRENT_PROJECT_VERSION: "1"
+    VERSIONING_SYSTEM: apple-generic
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+    TARGETED_DEVICE_FAMILY: "1"
+targets:
+  IslandMe:
+    type: application
+    platform: iOS
+    sources:
+      - path: IslandMe
+        excludes: ["Resources/**"]
+      - path: Shared
+      - path: Pets.xcassets
+      - path: IslandMe/Resources
+    dependencies:
+      - target: IslandMeWidget
+        embed: true
+        codeSign: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.eddiejiang.islandme
+        TARGETED_DEVICE_FAMILY: "1"      # 只上 iPhone（不然苹果要 iPad 截图）
+        INFOPLIST_FILE: IslandMe/Info.plist
+        CODE_SIGN_ENTITLEMENTS: IslandMe/IslandMe.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        GENERATE_INFOPLIST_FILE: NO
+  IslandMeWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: IslandMeWidget
+        excludes: ["Resources/**"]
+      - path: Shared
+      - path: Pets.xcassets
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.eddiejiang.islandme.widget
+        CODE_SIGN_ENTITLEMENTS: IslandMeWidget/IslandMeWidget.entitlements
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: IslandMeWidget/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        SKIP_INSTALL: YES

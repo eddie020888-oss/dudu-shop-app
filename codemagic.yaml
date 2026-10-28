@@ -1,0 +1,168 @@
+workflows:
+  ios-testflight:
+    name: IslandMe → TestFlight
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    integrations:
+      app_store_connect: "ParentLearning Codemagic R2"   # 与 Codemagic 里保存的 API 密钥集成同名
+    environment:
+      xcode: latest
+      ios_signing:
+        # 2026-10-20 开了 App Groups（group.com.eddiejiang.islandme）后重新生成的描述文件，写明用哪两个
+        provisioning_profiles:
+          - islandme_app_ic   # 2026-10-22 加了 iCloud（存档）后重建
+          - islandme_widget_ag
+        certificates:
+          - ParentLearning Distribution 20261008
+      vars:
+        APP_ID: com.eddiejiang.islandme
+        ASC_APP_ID: "6823709415"
+    # 2026-10-27 发财哥：不再 push 自动打包，只在他同意后手动点「开始构建」（每次约 $0.5）
+    scripts:
+      - name: Enable App ID capabilities (HealthKit)
+        script: |
+          # 用 codemagic-cli-tools 自己的解释器跑，才有 codemagic 包
+          PY=$(sed -n '1s/^#!//p' "$(which app-store-connect)")
+          echo "python: $PY"
+          "$PY" scripts/enable_capabilities.py "$APP_ID" HEALTHKIT GAME_CENTER ICLOUD
+      - name: Generate Xcode project
+        script: |
+          brew install xcodegen
+          xcodegen generate
+      - name: Set bundle version from build number
+        script: |
+          LATEST=$(app-store-connect get-latest-build-number "$ASC_APP_ID" 2>/dev/null || echo 0)
+          NEXT=$((LATEST + 1)); [ "$BUILD_NUMBER" -gt "$NEXT" ] && NEXT=$BUILD_NUMBER
+          echo "bundle version -> $NEXT (ASC latest=$LATEST, codemagic build=$BUILD_NUMBER)"
+          agvtool new-version -all "$NEXT"
+      - name: Apply signing profiles
+        script: xcode-project use-profiles
+      - name: Build IPA
+        script: xcode-project build-ipa --project IslandMe.xcodeproj --scheme IslandMe
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+    publishing:
+      scripts:
+        - name: Show build errors (if any)
+          script: |
+            grep -hE "error:|Provisioning profile|doesn't support|not supported|entitlement" /tmp/xcodebuild_logs/*.log 2>/dev/null | grep -v "^$" | sort -u | head -40 || true
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: false   # 内测群组已自动分发；true 会要求填写外测审核信息
+
+  screenshots:
+    name: 商店截图（手动）
+    instance_type: mac_mini_m2
+    max_build_duration: 45
+    environment:
+      xcode: latest
+    scripts:
+      - name: Generate Xcode project
+        script: |
+          brew install xcodegen
+          xcodegen generate
+      - name: Simulator screenshots
+        script: bash scripts/shots.sh
+    artifacts:
+      - shots/*.png
+
+  selftest:
+    name: 自测（手动）
+    instance_type: mac_mini_m2
+    max_build_duration: 30
+    environment:
+      xcode: latest
+      vars:
+        SHOTS: "0"   # 要截图时改成 1（多跑 4 分钟）
+    scripts:
+      - name: Generate Xcode project
+        script: |
+          brew install xcodegen
+          xcodegen generate
+      - name: Self test in simulator
+        script: bash scripts/selftest.sh
+    artifacts:
+      - selftest/*
+
+  asc-metadata:
+    name: 填上架资料（手动，不提交审核）
+    instance_type: mac_mini_m2
+    max_build_duration: 20
+    integrations:
+      app_store_connect: "ParentLearning Codemagic R2"
+    scripts:
+      - name: Fill App Store Connect
+        script: |
+          PY=$(sed -n '1s/^#!//p' "$(which app-store-connect)")
+          "$PY" -c "import jwt, requests; print('jwt', jwt.__version__)" || "$PY" -m pip install pyjwt requests
+          "$PY" scripts/asc/metadata.py apply
+
+  asc-gamecenter:
+    name: 开 Game Center、建周榜（手动）
+    instance_type: mac_mini_m2
+    max_build_duration: 10
+    integrations:
+      app_store_connect: "ParentLearning Codemagic R2"
+    scripts:
+      - name: Game Center
+        script: |
+          PY=$(sed -n '1s/^#!//p' "$(which app-store-connect)")
+          "$PY" -c "import jwt, requests" || "$PY" -m pip install pyjwt requests
+          "$PY" scripts/enable_capabilities.py com.eddiejiang.islandme HEALTHKIT GAME_CENTER
+          "$PY" scripts/asc/gamecenter.py
+
+  asc-caps:
+    name: 开 App 能力、重建描述文件（手动）
+    instance_type: mac_mini_m2
+    max_build_duration: 10
+    integrations:
+      app_store_connect: "ParentLearning Codemagic R2"
+    environment:
+      vars:
+        PROFILE_NAME: islandme_app_ic
+        RESET_PROFILES: "1"   # 加了 iCloud 旧描述文件就不能用了：全删，重建一个
+    scripts:
+      - name: Capabilities
+        script: |
+          PY=$(sed -n '1s/^#!//p' "$(which app-store-connect)")
+          "$PY" scripts/enable_capabilities.py com.eddiejiang.islandme HEALTHKIT GAME_CENTER ICLOUD
+
+  asc-iap:
+    name: 建内购商品（手动）
+    instance_type: mac_mini_m2
+    max_build_duration: 10
+    integrations:
+      app_store_connect: "ParentLearning Codemagic R2"
+    scripts:
+      - name: In-App Purchases
+        script: |
+          PY=$(sed -n '1s/^#!//p' "$(which app-store-connect)")
+          "$PY" -c "import jwt, requests" || "$PY" -m pip install pyjwt requests
+          "$PY" scripts/asc/iap.py
+
+  asc-status:
+    name: 查审核状态（手动）
+    instance_type: mac_mini_m2
+    max_build_duration: 5
+    integrations:
+      app_store_connect: "ParentLearning Codemagic R2"
+    scripts:
+      - name: Status
+        script: |
+          PY=$(sed -n '1s/^#!//p' "$(which app-store-connect)")
+          "$PY" -c "import jwt, requests" || "$PY" -m pip install pyjwt requests
+          "$PY" scripts/asc/status.py
+
+  asc-submit:
+    name: 提交审核（手动）
+    instance_type: mac_mini_m2
+    max_build_duration: 15
+    integrations:
+      app_store_connect: "ParentLearning Codemagic R2"
+    scripts:
+      - name: Submit for review
+        script: |
+          PY=$(sed -n '1s/^#!//p' "$(which app-store-connect)")
+          "$PY" scripts/asc/metadata.py apply   # 先把最新构建选上
+          "$PY" scripts/asc/submit.py

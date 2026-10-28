@@ -1,0 +1,27 @@
+# 自测：模拟器里机器人用真代码从新开局一路玩，出报告（手动点 Run workflow）
+name: Self test
+on:
+  workflow_dispatch:
+    inputs:
+      shots:
+        description: "要不要截图（0/1）"
+        default: "0"
+jobs:
+  selftest:
+    runs-on: macos-26
+    timeout-minutes: 60
+    env:
+      SHOTS: ${{ github.event.inputs.shots }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select Xcode (latest)
+        run: sudo xcode-select -s "$(ls -d /Applications/Xcode_*.app | grep -vi beta | sort -V | tail -1)" && xcodebuild -version
+      - name: Generate Xcode project
+        run: brew install xcodegen && xcodegen generate
+      - name: Self test in simulator
+        run: bash scripts/selftest.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: selftest
+          path: selftest/

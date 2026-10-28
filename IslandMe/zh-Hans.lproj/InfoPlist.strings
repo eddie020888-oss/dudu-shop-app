@@ -1,0 +1,5 @@
+"CFBundleDisplayName" = "嘟嘟小店";
+"NSHealthShareUsageDescription" = "读取今天的步数和运动记录（跑步、力量训练），让嘟嘟知道你练过没有。";
+"NSHealthUpdateUsageDescription" = "嘟嘟小店不会写入任何健康数据。";
+"NSCameraUsageDescription" = "「对视」：App 开着时用前置摄像头判断你是不是在看它，它会回看你、害羞。只在手机上算，不拍照、不录像、不上传。";
+"NSMotionUsageDescription" = "用于识别你是在走路、跑步还是静止，让嘟嘟跟着你动。";

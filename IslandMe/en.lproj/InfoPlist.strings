@@ -1,0 +1,5 @@
+"CFBundleDisplayName" = "Dudu Shop";
+"NSHealthShareUsageDescription" = "Reads today's steps and workouts (runs, strength training) so Dudu knows whether you moved today.";
+"NSHealthUpdateUsageDescription" = "Dudu Shop never writes any health data.";
+"NSCameraUsageDescription" = "“Eye contact”: while the app is open, the front camera checks whether you're looking at Dudu, so it can look back (and get shy). Processed on your phone only — no photos, no video, nothing uploaded.";
+"NSMotionUsageDescription" = "Tells whether you're walking, running or still, so Dudu can move along with you.";

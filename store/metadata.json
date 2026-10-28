@@ -1,0 +1,48 @@
+{
+ "app_id": "6823709415",
+ "version": "1.0.0",
+ "copyright": "2026 Eddie Jiang",
+ "support_url": "https://eddie020888-oss.github.io/dudu-shop/",
+ "privacy_url": "https://eddie020888-oss.github.io/dudu-shop/privacy.html",
+ "categories": {
+  "primary": "GAMES",
+  "sub1": "GAMES_SIMULATION",
+  "secondary": "ENTERTAINMENT"
+ },
+ "exclude_territories": [
+  "CHN"
+ ],
+ "locales": {
+  "zh-Hans": {
+   "name": "嘟嘟小店 - 灵动岛宠物餐厅",
+   "subtitle": "它很懒，但会陪你开一家小店",
+   "promo": "嘟嘟星在变暗。它是那里最后一家小店的逃跑小徒弟，现在住进了你的灵动岛。你做菜，它躺着收钱，一单一单把家乡点亮。",
+   "keywords": "桌宠,电子宠物,养成,合成,做菜,经营,模拟,实时活动,锁屏,陪伴,萌宠,换装,治愈,解压,计步",
+   "description": "嘟嘟是一只住在灵动岛里的紫色小宠物。它很懒，手很短，不吵你，只是一直在。\n\n【嘟嘟星在变暗】\n嘟嘟星的光，是大家互相做饭点亮的。它家乡最后一家小店关了门——店是它关的。开店第一晚，灵动岛的门缝里递进来一张家乡的小票……\n\n【跟着你变】\n你走路、跑步、开车、上班、睡觉，灵动岛里的嘟嘟会换成对应的样子，说一句懒洋洋的话。\n\n【嘟嘟小店】\n把食材拖到一起合成、做菜、接订单。急单、熟客的小故事，还有每章一张门那边来的门单。\n\n【打扮它】\n20 多件帽子、眼镜、颈饰，戴上以后灵动岛里也看得到。\n\n【布置它的窝】\n每个位置都有好几种款式：云朵软垫、水母夜灯、月亮躺椅……慢慢攒，慢慢换。\n\n不用注册，不要账号，没有广告。所有数据都只存在你的手机里。\n\n需要 iPhone 14 Pro 或更新的带灵动岛的机型才能在灵动岛里看到嘟嘟；其他机型在锁屏实时活动里显示。",
+   "shots": [
+    "zh-Hans_1_island.png",
+    "zh-Hans_2_kitchen.png",
+    "zh-Hans_3_story.png",
+    "zh-Hans_4_nest.png",
+    "zh-Hans_5_store.png",
+    "zh-Hans_6_map.png"
+   ]
+  },
+  "en-US": {
+   "name": "Dudu Shop: Dynamic Island Pet",
+   "subtitle": "A lazy pet who runs a shop",
+   "promo": "Planet Dudu is going dark. Its runaway shop apprentice now lives in your Dynamic Island. You cook, it collects coins, and one order at a time, its home lights back up.",
+   "keywords": "virtual pet,digital pet,merge,cooking,cozy,cute,live activity,lock screen,companion,decorate,steps",
+   "description": "Dudu is a small, round, very lazy purple pet who lives in your Dynamic Island. Short arms. Always lying down. Never nags — just stays with you.\n\nPLANET DUDU IS GOING DARK\nOn Planet Dudu, light comes from cooking for each other. Its last little shop closed — and Dudu is the one who closed it. On your first night open, a ticket from home drifts down through the crack in the Dynamic Island…\n\nIT FOLLOWS YOUR DAY\nWalk, run, drive, work or sleep, and Dudu in the Dynamic Island changes with you, with a sleepy little line.\n\nDUDU SHOP\nDrag matching ingredients together to merge them, cook, and fill orders. Rush orders, regulars with their own little stories, and a door order from Planet Dudu every chapter.\n\nDRESS IT UP\n20+ hats, glasses and neckwear — and you can see them in the Dynamic Island too.\n\nDECORATE ITS NEST\nEvery spot has several styles: a cloud cushion, a jellyfish night light, a moon lounger… collect them slowly.\n\nNo sign-up, no account, no ads. Everything stays on your phone.\n\nThe Dynamic Island needs iPhone 14 Pro or later; on other models Dudu lives on the Lock Screen.",
+   "shots": [
+    "en_1_island.png",
+    "en_2_kitchen.png",
+    "en_3_story.png",
+    "en_4_nest.png",
+    "en_5_store.png",
+    "en_6_map.png"
+   ]
+  }
+ },
+ "review_notes": "Dudu Shop (嘟嘟小店) is a merge-cooking game with a virtual pet, Dudu, that lives in the Dynamic Island and Live Activity. Chinese and English (follows the system language). No account or login is required.\n\nAbout the previous rejection (Guideline 5.6): build 1.0.0 (128) contained an internal developer test panel (tap the level number 7 times) that we used to jump chapters while testing. It was never meant for players and should not have been in the build. It has been completely removed: the panel and all test/screenshot launch modes are now compiled only into our local Debug builds and do not exist in this build. There are no hidden features, no remote configuration and no server; the app behaves the same for review as for customers.\n\nEverything in the app is reachable from the 5 tabs:\n1. Home: the pet. Tap to poke it, long-press or tap the chat card to chat (built-in local lines only, no AI, no network). Mini-games are opened from the pet's happiness bubble.\n2. Shop: the merge-cooking game. Drag two identical items together to merge them, fill orders to earn coins and stars. A short tutorial runs for the first levels.\n3. Store: food, accessories and furniture bought with in-game coins.\n4. Nest: place furniture.\n5. Me: settings, iCloud save status.\n\nTime-based content (visible on the date, nothing is unlocked remotely): weekend events every Saturday-Sunday; seasonal events Oct 24-Nov 2 and Dec 18-31; a 30-day season pass track that resets each season; some accessories are only on sale during a holiday window (shown with their dates in the Store).\n\nIn-app purchases (consumable, Shop tab > gem icon at the top): Starter Pack (one time), 80 / 220 / 480 / 1000 gems. Gems speed things up, buy energy and bag slots; everything can also be earned by playing.\n\nGame Center: optional weekly leaderboard for orders served (sign-in only when the user taps the leaderboard card).\niCloud: game progress is backed up to iCloud key-value storage so it can be restored on a new device.\n\nPermissions (all optional, the app works without them):\n- Health (read only): today's steps and workouts, shown as the pet's activity.\n- Motion & Fitness: walking/running/driving changes the pet's pose in the Dynamic Island.\n- Camera (front): \"eye contact\" feature while the app is open, on device only, nothing is recorded or stored.\n- Notifications: reminders when the pet is hungry or an order is ready."
+}

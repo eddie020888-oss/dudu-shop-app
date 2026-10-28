@@ -1,0 +1,33 @@
+# App Store Connect 后台操作（不打包，用 Linux 机器）：填资料 / 查状态 / 提交审核 / 内购 / Game Center / 开能力
+name: App Store Connect
+on:
+  workflow_dispatch:
+    inputs:
+      task:
+        description: "metadata / status / submit / iap / gamecenter / caps"
+        default: status
+jobs:
+  asc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      APP_STORE_CONNECT_KEY_IDENTIFIER: ${{ secrets.ASC_KEY_ID }}
+      APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+      APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.ASC_PRIVATE_KEY }}
+      CERTIFICATE_PRIVATE_KEY: ${{ secrets.CERT_PRIVATE_KEY }}
+      REVIEW_CONTACT_EMAIL: ${{ secrets.REVIEW_CONTACT_EMAIL }}
+      REVIEW_CONTACT_PHONE: ${{ secrets.REVIEW_CONTACT_PHONE }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip3 install codemagic-cli-tools pyjwt requests
+      - name: Run
+        run: |
+          case "${{ github.event.inputs.task }}" in
+            metadata)   python3 scripts/asc/metadata.py apply ;;
+            status)     python3 scripts/asc/status.py ;;
+            submit)     python3 scripts/asc/metadata.py apply && python3 scripts/asc/submit.py ;;
+            iap)        python3 scripts/asc/iap.py ;;
+            gamecenter) python3 scripts/asc/gamecenter.py ;;
+            caps)       python3 scripts/enable_capabilities.py com.eddiejiang.islandme HEALTHKIT GAME_CENTER ICLOUD ;;
+            *) echo "unknown task"; exit 1 ;;
+          esac
