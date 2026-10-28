@@ -1,0 +1,146 @@
+getpwuid_r did not find a match for uid 501
+Timestamp               Ty Process[PID:TID]
+2026-10-28 18:23:39.523 E  IslandMe[11797:9983] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:23:39.523 E  IslandMe[11797:9983] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:23:40.344 E  IslandMe[11797:9931] [com.apple.coreaudio:AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-10-28 18:23:40.345 E  IslandMe[11797:9931] [com.apple.coreaudio:AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-10-28 18:23:42.107 E  IslandMe[11797:9938] [com.apple.coreaudio:AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-10-28 18:23:42.108 E  IslandMe[11797:9938] [com.apple.coreaudio:AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-10-28 18:23:44.191 E  IslandMe[11797:99dc] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:23:44.193 E  IslandMe[11797:99dc] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:23:44.200 E  IslandMe[11797:99dc] [com.apple.coremedia:] <<<< VMC >>>> signalled err=-12823 at <>:8625
+2026-10-28 18:23:48.782 E  IslandMe[11797:99d9] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:23:48.784 E  IslandMe[11797:99d9] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:23:48.792 E  IslandMe[11797:99d9] [com.apple.coremedia:] <<<< VMC >>>> signalled err=-12823 at <>:8625
+2026-10-28 18:23:53.354 E  IslandMe[11797:99d9] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:23:53.354 E  IslandMe[11797:99d9] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:23:53.360 E  IslandMe[11797:99d9] [com.apple.coremedia:] <<<< VMC >>>> signalled err=-12823 at <>:8625
+2026-10-28 18:23:57.940 E  IslandMe[11797:99dc] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:23:57.940 E  IslandMe[11797:99dc] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:23:57.943 E  IslandMe[11797:99dc] [com.apple.coremedia:] <<<< VMC >>>> signalled err=-12823 at <>:8625
+2026-10-28 18:24:02.554 E  IslandMe[11797:99d9] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:24:02.555 E  IslandMe[11797:99d9] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:24:02.561 E  IslandMe[11797:99d9] [com.apple.coremedia:] <<<< VMC >>>> signalled err=-12823 at <>:8625
+2026-10-28 18:24:07.122 E  IslandMe[11797:99db] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:24:07.123 E  IslandMe[11797:99db] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:24:07.126 E  IslandMe[11797:99db] [com.apple.coremedia:] <<<< VMC >>>> signalled err=-12823 at <>:8625
+2026-10-28 18:24:11.723 E  IslandMe[11797:99d9] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:24:11.724 E  IslandMe[11797:99d9] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:24:11.738 E  IslandMe[11797:99d9] [com.apple.coremedia:] <<<< VMC >>>> signalled err=-12823 at <>:8625
+2026-10-28 18:24:16.294 E  IslandMe[11797:99db] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:24:16.295 E  IslandMe[11797:99db] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:24:16.299 E  IslandMe[11797:99db] [com.apple.coremedia:] <<<< VMC >>>> signalled err=-12823 at <>:8625
+2026-10-28 18:24:20.884 E  IslandMe[11797:99dc] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:24:20.884 E  IslandMe[11797:99dc] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:24:20.889 E  IslandMe[11797:99dc] [com.apple.coremedia:] <<<< VMC >>>> signalled err=-12823 at <>:8625
+2026-10-28 18:24:21.878 E  IslandMe[11797:997f] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-10-28 18:24:22.512 E  IslandMe[11797:997f] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-10-28 18:24:22.513 E  IslandMe[11797:997f] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-10-28 18:24:23.299 E  IslandMe[11797:99d9] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:24:23.300 E  IslandMe[11797:99d9] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:24:25.986 E  IslandMe[11797:997f] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-10-28 18:24:26.538 E  IslandMe[11797:997f] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-10-28 18:24:26.543 E  IslandMe[11797:997f] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-10-28 18:24:26.574 E  IslandMe[11797:997f] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-10-28 18:24:26.626 E  IslandMe[11797:997f] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-10-28 18:24:27.194 E  IslandMe[11797:99db] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:24:27.194 E  IslandMe[11797:99db] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:24:27.540 E  IslandMe[11797:997f] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-10-28 18:24:27.604 E  IslandMe[11797:997f] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-10-28 18:24:28.141 E  IslandMe[11797:997f] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-10-28 18:24:29.013 E  IslandMe[11797:997f] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-10-28 18:24:32.006 E  IslandMe[11797:99dc] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:24:32.007 E  IslandMe[11797:99dc] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:24:36.572 E  IslandMe[11797:99db] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:24:36.573 E  IslandMe[11797:99db] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:24:51.508 E  IslandMe[15018:bad6] [com.apple.locationd.Core:Core] {"msg":"file does not exist... clearing", "file":/Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/private/var/Managed Preferences/kCFPreferencesCurrentUser/com.apple.CoreMotion.plist, "error":Error Domain=NSCocoaErrorDomain Code=260 "未能打开文件“com.apple.CoreMotion.plist”，因为它不存在。" UserInfo={NSFilePath=/Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/private/var/Managed Preferences/kCFPreferencesCurrentUser/com.apple.CoreMotion.plist, NSURL=file:///Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS%2026.5.simruntime/Contents/Resources/RuntimeRoot/private/var/Managed%20Preferences/kCFPreferencesCurrentUser/com.apple.CoreMotion.plist, NSUnderlyingError=0x1017e90b0 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}}
+2026-10-28 18:24:52.116 E  IslandMe[15018:bab6] [com.apple.kvs:Connection] Unable to find entitlement for KVS store
+2026-10-28 18:24:52.117 F  IslandMe[15018:bab6] [com.apple.kvs:Connection] BUG IN CLIENT OF KVS: Trying to initialize NSUbiquitousKeyValueStore without a store identifier. Please specify your store identifier in the 'com.apple.developer.ubiquity-kvstore-identifier' entitlement.
+2026-10-28 18:24:53.036 E  IslandMe[15018:bacb] [com.apple.app_launch_measurement:General] Failed to send CA Event for app launch measurements for ca_event_type: 0 event_name: com.apple.app_launch_measurement.FirstFramePresentationMetric
+2026-10-28 18:24:53.664 E  IslandMe[15018:baea] [com.apple.app_launch_measurement:General] Failed to send CA Event for app launch measurements for ca_event_type: 1 event_name: com.apple.app_launch_measurement.ExtendedLaunchMetrics
+2026-10-28 18:24:53.724 E  IslandMe[15018:baf0] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:24:53.726 E  IslandMe[15018:baf0] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:24:57.738 E  IslandMe[15018:baf3] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:24:57.739 E  IslandMe[15018:baf3] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:25:02.312 E  IslandMe[15018:baf1] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:25:02.312 E  IslandMe[15018:baf1] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:25:06.974 E  IslandMe[15018:bae1] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:25:06.975 E  IslandMe[15018:bae1] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:25:11.491 E  IslandMe[15018:baf1] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:25:11.492 E  IslandMe[15018:baf1] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:25:11.495 E  IslandMe[15018:baf1] [com.apple.coremedia:] <<<< VMC >>>> signalled err=-12823 at <>:8625
+2026-10-28 18:25:16.091 E  IslandMe[15018:baf3] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:25:16.092 E  IslandMe[15018:baf3] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:25:16.098 E  IslandMe[15018:baf3] [com.apple.coremedia:] <<<< VMC >>>> signalled err=-12823 at <>:8625
+2026-10-28 18:25:21.405 E  IslandMe[15018:baf1] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:25:21.407 E  IslandMe[15018:baf1] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:25:26.731 E  IslandMe[16160:c6dd] [com.apple.locationd.Core:Core] {"msg":"file does not exist... clearing", "file":/Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/private/var/Managed Preferences/kCFPreferencesCurrentUser/com.apple.CoreMotion.plist, "error":Error Domain=NSCocoaErrorDomain Code=260 "未能打开文件“com.apple.CoreMotion.plist”，因为它不存在。" UserInfo={NSFilePath=/Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/private/var/Managed Preferences/kCFPreferencesCurrentUser/com.apple.CoreMotion.plist, NSURL=file:///Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS%2026.5.simruntime/Contents/Resources/RuntimeRoot/private/var/Managed%20Preferences/kCFPreferencesCurrentUser/com.apple.CoreMotion.plist, NSUnderlyingError=0x108431020 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}}
+2026-10-28 18:25:27.595 E  IslandMe[16160:c61b] [com.apple.kvs:Connection] Unable to find entitlement for KVS store
+2026-10-28 18:25:27.596 F  IslandMe[16160:c61b] [com.apple.kvs:Connection] BUG IN CLIENT OF KVS: Trying to initialize NSUbiquitousKeyValueStore without a store identifier. Please specify your store identifier in the 'com.apple.developer.ubiquity-kvstore-identifier' entitlement.
+2026-10-28 18:25:28.182 E  IslandMe[16160:c680] [com.apple.CFBundle:plugin] AddInstanceForFactory: No factory registered for id <CFUUID 0x11f924f20> F8BB1C28-BAE8-11D6-9C31-00039315CD46
+2026-10-28 18:25:28.753 E  IslandMe[16160:c680] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:25:28.876 E  IslandMe[16160:c75f] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:25:29.113 E  IslandMe[16160:c787] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:25:29.115 E  IslandMe[16160:c787] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:25:32.541 E  IslandMe[16160:c749] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:25:32.541 E  IslandMe[16160:c749] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:25:33.629 E  IslandMe[16160:c681] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:25:34.592 E  IslandMe[16160:c75e] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:25:35.003 E  IslandMe[16160:c746] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:25:35.659 E  IslandMe[16160:c749] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:25:35.661 E  IslandMe[16160:c749] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:25:39.565 E  IslandMe[16160:c9f2] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:25:39.565 E  IslandMe[16160:c9f2] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:25:41.602 E  IslandMe[16160:c9f0] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:25:41.960 E  IslandMe[16160:c746] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:25:43.648 E  IslandMe[16160:c749] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:25:43.648 E  IslandMe[16160:c749] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:25:49.379 E  IslandMe[16964:ce92] [com.apple.locationd.Core:Core] {"msg":"file does not exist... clearing", "file":/Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/private/var/Managed Preferences/kCFPreferencesCurrentUser/com.apple.CoreMotion.plist, "error":Error Domain=NSCocoaErrorDomain Code=260 "未能打开文件“com.apple.CoreMotion.plist”，因为它不存在。" UserInfo={NSFilePath=/Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/private/var/Managed Preferences/kCFPreferencesCurrentUser/com.apple.CoreMotion.plist, NSURL=file:///Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS%2026.5.simruntime/Contents/Resources/RuntimeRoot/private/var/Managed%20Preferences/kCFPreferencesCurrentUser/com.apple.CoreMotion.plist, NSUnderlyingError=0x10883cf30 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}}
+2026-10-28 18:25:49.789 E  IslandMe[16964:ce75] [com.apple.kvs:Connection] Unable to find entitlement for KVS store
+2026-10-28 18:25:49.790 F  IslandMe[16964:ce75] [com.apple.kvs:Connection] BUG IN CLIENT OF KVS: Trying to initialize NSUbiquitousKeyValueStore without a store identifier. Please specify your store identifier in the 'com.apple.developer.ubiquity-kvstore-identifier' entitlement.
+2026-10-28 18:25:50.515 E  IslandMe[16964:ce88] [com.apple.CFBundle:plugin] AddInstanceForFactory: No factory registered for id <CFUUID 0x123e85b40> F8BB1C28-BAE8-11D6-9C31-00039315CD46
+2026-10-28 18:25:52.164 E  IslandMe[16964:ceeb] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:25:52.166 E  IslandMe[16964:ceeb] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:25:52.336 E  IslandMe[16964:cedd] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:25:52.340 E  IslandMe[16964:ce88] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:25:55.659 E  IslandMe[16964:ceee] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:25:55.660 E  IslandMe[16964:ceee] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:25:56.105 E  IslandMe[16964:ce8c] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:25:56.122 E  IslandMe[16964:ce8c] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:25:56.785 E  IslandMe[16964:ced2] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:25:58.213 E  IslandMe[16964:ced8] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:25:59.966 E  IslandMe[16964:ceeb] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:25:59.966 E  IslandMe[16964:ceeb] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:26:03.795 E  IslandMe[16964:ce8b] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:26:04.429 E  IslandMe[16964:ceee] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:26:04.430 E  IslandMe[16964:ceee] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:26:08.912 E  IslandMe[16964:ceeb] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:26:08.913 E  IslandMe[16964:ceeb] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:26:08.925 E  IslandMe[16964:ceeb] [com.apple.coremedia:] <<<< VMC >>>> signalled err=-12823 at <>:8625
+2026-10-28 18:26:10.798 E  IslandMe[16964:cedd] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:26:12.257 E  IslandMe[16964:ce8b] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:26:12.881 E  IslandMe[16964:ced8] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:26:12.893 E  IslandMe[16964:ced8] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:26:13.272 E  IslandMe[16964:ceed] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:26:13.273 E  IslandMe[16964:ceed] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:26:13.279 E  IslandMe[16964:ceed] [com.apple.coremedia:] <<<< VMC >>>> signalled err=-12823 at <>:8625
+2026-10-28 18:26:17.660 E  IslandMe[16964:ceeb] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:26:17.661 E  IslandMe[16964:ceeb] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:26:17.674 E  IslandMe[16964:ceeb] [com.apple.coremedia:] <<<< VMC >>>> signalled err=-12823 at <>:8625
+2026-10-28 18:26:17.790 E  IslandMe[16964:cedd] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:26:22.172 E  IslandMe[16964:ceed] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:26:22.173 E  IslandMe[16964:ceed] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:26:22.188 E  IslandMe[16964:ceed] [com.apple.coremedia:] <<<< VMC >>>> signalled err=-12823 at <>:8625
+2026-10-28 18:26:24.797 E  IslandMe[16964:ceda] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:26:25.141 E  IslandMe[16964:ceda] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:26:26.511 E  IslandMe[16964:ceed] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:26:26.512 E  IslandMe[16964:ceed] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:26:26.528 E  IslandMe[16964:ceed] [com.apple.coremedia:] <<<< VMC >>>> signalled err=-12823 at <>:8625
+2026-10-28 18:26:30.923 E  IslandMe[16964:ceee] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:26:30.924 E  IslandMe[16964:ceee] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:26:30.932 E  IslandMe[16964:ceee] [com.apple.coremedia:] <<<< VMC >>>> signalled err=-12823 at <>:8625
+2026-10-28 18:26:31.796 E  IslandMe[16964:d0fd] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:26:32.159 E  IslandMe[16964:ce8b] [com.apple.activitykit:api] Updating content for activity 340B8D72-4F3E-4F9C-BC8A-88F46D3D82CD
+2026-10-28 18:26:35.412 E  IslandMe[16964:ceee] [com.apple.coremedia:] (Fig) signalled err=-12900 at <>:1242
+2026-10-28 18:26:35.413 E  IslandMe[16964:ceee] [com.apple.coremedia:] <<<< VRP >>>> signalled err=-12852 at <>:2336
+2026-10-28 18:26:35.424 E  IslandMe[16964:ceee] [com.apple.coremedia:] <<<< VMC >>>> signalled err=-12823 at <>:8625
