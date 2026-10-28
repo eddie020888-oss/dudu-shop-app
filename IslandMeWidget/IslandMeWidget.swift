@@ -35,7 +35,7 @@ struct IslandMeLiveActivity: Widget {
             }
             .padding(14)
             .activityBackgroundTint(Color(hex: context.state.character.backgroundHex))
-            .widgetURL(URL(string: context.state.shopAt != nil ? "islandme://shop" : "islandme://chat"))
+            .widgetURL(URL(string: (context.state.shopAt != nil || (context.state.shopTickets ?? 0) > 0) ? "islandme://shop" : "islandme://chat"))
         } dynamicIsland: { context in
             DynamicIsland {
                 // 展开态（长按岛台）：左边大大的它（点它 = 摸摸），右边它刚说的 / 它想要的，下面三个按钮。别的都不放。
@@ -92,7 +92,7 @@ struct IslandMeLiveActivity: Widget {
                 FaceView(state: context.state).frame(width: 24, height: 24)
             }
             .keylineTint(Color(hex: context.state.character.figureHex))
-            .widgetURL(URL(string: context.state.shopAt != nil ? "islandme://shop" : "islandme://chat"))
+            .widgetURL(URL(string: (context.state.shopAt != nil || (context.state.shopTickets ?? 0) > 0) ? "islandme://shop" : "islandme://chat"))
         }
     }
 }

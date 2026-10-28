@@ -803,6 +803,9 @@ final class MKStore: ObservableObject {
             if let r = (fresh.isEmpty ? can : fresh).randomElement() {
                 pick = Array(MK.baseChains(r)).shuffled()
             }
+            // 本周主题链至少有一条在热卖里
+            if let tk = MKWeek.current.chains.filter({ k in unlocked.contains { $0.key == k } && !pick.contains(k) }).randomElement(),
+               !pick.contains(where: { MKWeek.current.chains.contains($0) }) { pick.append(tk) }
             for k in unlocked.map(\.key).shuffled() where pick.count < 3 && !pick.contains(k) { pick.append(k) }
             s.focus = pick
         }
@@ -906,6 +909,11 @@ final class MKStore: ObservableObject {
             }
         }
         s.stars += o.stars * (lucky ? 2 : 1)
+        // 每周主题：用到主题链的单多给 1★
+        if !o.isPet, !o.isEvent, MKWeek.matches(o.items) {
+            s.stars += 1
+            if Int.random(in: 0..<4) == 0 { say(MKWeek.current.icon + " " + T("{0}加成 +1★", MKWeek.current.name)) }
+        }
         var tip = 0
         if o.isPet && !MKDemo.on { Intimacy.update { $0.shopMeal() } }
         if o.isSignature { givePacks(1, T("今日招牌卖出去了")) }
@@ -1181,7 +1189,7 @@ final class MKStore: ObservableObject {
         }
         guard let d = c.dish, let at = c.doneAt else { return }
         if Date() >= at {
-            if place(d, near: i) { s.cooks[id] = MKCook(); haptic(.heavy); MKSfx.play("cookdone"); if let e = lastPlaced { emit(MKFX(kind: .burst, from: e, to: nil, item: nil, tier: 6)) }; say(T("出锅！闻着好香……它醒了。")); track("dish") }
+            if place(d, near: i) { s.cooks[id] = MKCook(); haptic(.heavy); MKSfx.play("cookdone"); if let e = lastPlaced { emit(MKFX(kind: .burst, from: e, to: nil, item: nil, tier: 6)) }; say(T("出锅！闻着好香……它醒了。")); react([T("这个我能先尝一口吗？"), T("香！整个柜台都是这个味。"), T("你做菜的样子好厉害。")], happy: true); track("dish") }
         } else {
             say(T("还要 {0} 分钟。下面可以用宝石加速。", Int(at.timeIntervalSinceNow / 60) + 1))
         }
@@ -2283,6 +2291,11 @@ struct MergeKitchenView: View {
             default: break
             }
             let lazy = [T("这单我替你记着。"), T("又是{0}？他们真能吃。", o.meal.replacingOccurrences(of: T("外卖 · "), with: "")), T("钱放我肚子上就行。"), T("送完了？我刚睡醒，正好。"), T("我负责收钱，你负责别的，分工明确。")]
+            // 外卖客人有名字、会回一句话：每个地址住着固定的人
+            let dest = o.meal.replacingOccurrences(of: T("外卖 · "), with: "").replacingOccurrences(of: T("⏱ 急单 · "), with: "")
+            if Int.random(in: 0..<2) == 0, let who = MKStory.takeoutFolks[dest], let line = who.lines.randomElement() {
+                store.say("📮 " + who.name + T("：") + line)
+            }
             store.react(lazy)
             store.cashUntil = Date().addingTimeInterval(4.5)
             return
@@ -2705,6 +2718,9 @@ struct MergeKitchenView: View {
                         }
                     }
                     tcard("🎞️", T("拍立得"), (store.s.packs ?? 0) > 0 ? T("{0} 包没开", store.s.packs ?? 0) : "\(store.cardsOwned)/\(MKCards.all.count)", hot: (store.s.packs ?? 0) > 0) { sheet = .album }
+                    tcard(MKWeek.current.icon, T("本周 · {0}", MKWeek.current.name), T("相关的单 +1★")) {
+                        store.say(MKWeek.current.icon + " " + MKWeek.current.name + T("：") + MKWeek.current.line + T(" 用到这些的单多给 1★：") + MKWeek.current.chains.compactMap { k in MK.chains.first { $0.key == k }?.genName }.joined(separator: T("、")) + T("。每周一换。"))
+                    }
                     tcard("🔥", T("今天热卖"), store.focus.map(\.genName).joined(separator: T("、"))) {
                         store.say(T("今天热卖：") + store.focus.map(\.genName).joined(separator: T("、")) + (store.nextTask.map { T(" · 下一个装修 {0}★", $0.stars) } ?? ""))
                     }

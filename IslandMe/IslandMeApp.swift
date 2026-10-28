@@ -100,6 +100,9 @@ struct ContentView: View {
     @State private var rescueShow: Rescue? = nil
     @State private var pickGame = Shot.pickGame
     @State private var homeGame: GameKind? = Shot.game
+    // 2026-10-28 新手第一个小任务：回到桌面看一眼灵动岛上的它（我们最特别的地方，新手要第一时间看到）
+    @AppStorage("quest.islandPeek") private var peekQuest = ""   // "" 没开始 / "on" 进行中 / "done"
+    @State private var leftAt: Date? = nil
 
     // body 拆成三段，避免一条链太长编译器算不过来
     var body: some View {
@@ -150,6 +153,7 @@ struct ContentView: View {
                            startIsland: { live.start(pose: shownPose, character: character, lastLine: chat.islandLine, need: needs.urgent) },
                            finish: {
                                if !live.isRunning { LiveActivityManager.userTurnedOff = true }   // 开场里选了"以后再说"
+                               else if peekQuest.isEmpty { peekQuest = "on" }
                                onboarded = true
                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { showFood = true }
                            },
@@ -279,6 +283,14 @@ struct ContentView: View {
         }
         .onChange(of: scenePhase) { _, p in
             detector.appActive = (p == .active)
+            if p == .background { leftAt = Date() }
+            if p == .active, peekQuest == "on", let t = leftAt, Date().timeIntervalSince(t) > 1.5, live.isRunning {
+                peekQuest = "done"
+                profile.earn(30, T("在灵动岛上看到它"))
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                    react(frame: "party", line: T("看到我了吧！我一直住在那儿。锁屏、玩别的 App，我都在上面陪你。"), seconds: 3.5)
+                }
+            }
             if p == .active {
                 companion.roll(wakeHour: profile.profile.wakeHour, sleepHour: profile.profile.sleepHour)
                 startFlourish(); dailyRewards(); welcomeBack(); lifeTick(); islandCareSync(); checkLetters(); gaze.start()
@@ -465,6 +477,21 @@ struct ContentView: View {
                             .padding(.horizontal, 20).padding(.top, 14)
                     }
 
+
+                    // 新手小任务：回桌面看一眼灵动岛
+                    if peekQuest == "on" && live.isRunning {
+                        HStack(spacing: 12) {
+                            Image(systemName: "rectangle.topthird.inset.filled").font(.system(size: 26)).foregroundStyle(Theme.accent)
+                            VStack(alignment: .leading, spacing: 3) {
+                                Text(T("试一下：回到桌面，看看屏幕最顶上")).font(.system(size: 15, weight: .bold)).foregroundStyle(Theme.text)
+                                Text(T("从屏幕底部往上划回到桌面，或者锁屏。它就在那个黑色的「岛」上。看完回来领 30 币。")).font(.system(size: 12)).foregroundStyle(Theme.text2)
+                            }
+                        }
+                        .padding(14).frame(maxWidth: .infinity, alignment: .leading)
+                        .background(Theme.accent.opacity(0.14), in: RoundedRectangle(cornerRadius: 18))
+                        .overlay(RoundedRectangle(cornerRadius: 18).stroke(Theme.accent.opacity(0.5), lineWidth: 1))
+                        .padding(.horizontal, 20).padding(.top, 14)
+                    }
 
                     // 嘟嘟星来信（没拆的）
                     if let l = letters.firstUnread {

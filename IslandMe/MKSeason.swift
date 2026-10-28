@@ -119,3 +119,27 @@ struct MKSeasonView: View {
         .preferredColorScheme(.dark)
     }
 }
+
+/// 每周主题：每周一换。这周的主题链一定在热卖里，含主题链的单多给 1★
+enum MKWeek {
+    struct Theme { let icon: String; let name: String; let chains: [String]; let line: String }
+    static let themes: [Theme] = [
+        Theme(icon: "🍱", name: T("便当周"), chains: ["rice", "veg"], line: T("这周大家都要带饭，米和菜卖得最好。")),
+        Theme(icon: "🥐", name: T("早餐周"), chains: ["tea", "egg", "milk"], line: T("这周早上排队的人多，面包、鸡蛋、牛奶抢手。")),
+        Theme(icon: "🎂", name: T("甜点周"), chains: ["sweet", "fruit"], line: T("这周有人过生日，甜的都好卖。")),
+        Theme(icon: "🍿", name: T("电影周"), chains: ["snack", "milk", "sweet"], line: T("这周街口放露天电影，爆米花和奶茶要多备。")),
+        Theme(icon: "🧺", name: T("野餐周"), chains: ["fruit", "tea", "rice"], line: T("天气好，大家去公园野餐。")),
+    ]
+    static func index(_ now: Date = Date()) -> Int { max(0, Int(now.timeIntervalSince(MKSeason.epoch) / (7 * 86400))) }
+    static var current: Theme { themes[index() % themes.count] }
+    static func ends(_ now: Date = Date()) -> Date { MKSeason.epoch.addingTimeInterval(Double(index(now) + 1) * 7 * 86400) }
+    /// 这张单有没有用到主题链（原料或菜的底料）
+    static func matches(_ items: [String]) -> Bool {
+        let keys = Set(current.chains)
+        return items.contains { id in
+            if let c = MK.chain(id) { return keys.contains(c.key) }
+            if let r = MK.recipe(id) { return !MK.baseChains(r).isDisjoint(with: keys) }
+            return false
+        }
+    }
+}
