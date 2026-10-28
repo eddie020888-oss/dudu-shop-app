@@ -85,8 +85,8 @@ extension MKStore {
         var c = cardCounts
         guard (c[id] ?? 0) == 0, let card = MKCards.card(id) else { return }
         c[id] = 1; s.cards = c
-        goldCard = card
-        checkSetDone(card.set)
+        // 卡马上到手；弹窗晚一点，别和装修完成的弹窗撞上（自测：机器人一直拿不到两张金卡）
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { self.goldCard = card; self.checkSetDone(card.set) }
     }
     /// 开一包：3 张，只从解锁了的套里抽，金卡不在包里
     func openPack() -> [MKPull]? {

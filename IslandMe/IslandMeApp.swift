@@ -731,7 +731,11 @@ struct ContentView: View {
     /// 到日子的信寄到：它先发现（"门那边好像寄来了东西"），首页出现信封；顺便约好下一封的提醒
     private func checkLetters() {
         guard bond.hatched else { return }
-        if letters.deliver(days: bond.daysTogether) != nil {
+        // 好几天没来：攒下的信一次寄到，只说一句（自测：每次打开都寄一封、同一句话在聊天里重复好几遍）
+        var got = 0
+        while letters.deliver(days: bond.daysTogether) != nil, got < 20 { got += 1 }
+        let lastSaid = chat.messages.last?.text ?? ""
+        if got > 0, !lastSaid.contains(T("信")) && !lastSaid.contains("letter") {
             DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
                 let line = Voice.route == .dudu || Voice.stage == 0 ? T("嘟？嘟嘟！（它指着门那边，有个信封掉了下来）")
                          : (Voice.route == .en ? "Something came through the door… a letter!" : T("门那边好像掉下来一封信……一起拆？"))

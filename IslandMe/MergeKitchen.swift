@@ -1770,7 +1770,7 @@ final class MKStore: ObservableObject {
         if let m = MKStory.mystery(answeredBy: t.id) { reveal = m } else if let m = MKStory.mystery(halfBy: t.id) { reveal = m }
         gainXP(t.stars * 2)
         s.energy += 10   // 2026-10-27：每件装修 +10 体力，做完马上能接着玩
-        if let g = MKCards.goldAt[t.id] { DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { self.giveGold(g) } }
+        if let g = MKCards.goldAt[t.id] { giveGold(g) }
         if MKStory.chapterEnds.contains(t.id) {
             s.gems += 10; give("chest3")
             s.packs = (s.packs ?? 0) + 2
