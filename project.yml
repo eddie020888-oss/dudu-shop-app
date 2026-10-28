@@ -44,7 +44,7 @@ targets:
       - path: IslandMeWidget
         excludes: ["Resources/**"]
       - path: Shared
-      - path: Pets.xcassets
+      # 灵动岛用的小图（scripts/make_widget_assets.py 生成），不用 Pets.xcassets 的大图：大图在岛上显示成灰块
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.eddiejiang.islandme.widget
