@@ -6,6 +6,8 @@ on:
       shots:
         description: "要不要截图（0/1）"
         default: "0"
+permissions:
+  contents: write
 jobs:
   selftest:
     runs-on: macos-26
@@ -25,3 +27,11 @@ jobs:
         with:
           name: selftest
           path: selftest/
+      - name: Publish report to selftest branch
+        if: always()
+        run: |
+          cd selftest
+          git init -q && git checkout -q -b selftest
+          git config user.name "selftest-bot" && git config user.email "selftest@users.noreply.github.com"
+          git add . && git commit -qm "selftest for ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" selftest
